@@ -1,0 +1,152 @@
+<div class="tab-content" id="pills-tabContent">
+  <!-- Start of Search Tab-->
+  <div
+    class="tab-pane fade show active"
+    id="search-trip"
+    role="tabpanel"
+    aria-labelledby="search-trip-tab"
+  >
+    <div class="input-group rounded">
+      <input
+        type="search"
+        class="form-control rounded"
+        placeholder="Search"
+        aria-label="Search"
+        aria-describedby="search-addon"
+      />
+      <input type="submit" />
+    </div>
+  </div>
+  <!-- End of Search Tab-->
+
+  <!-- Plan Trip Tab-->
+  <div
+    class="tab-pane fade"
+    id="plan-trip"
+    role="tabpanel"
+    aria-labelledby="plan-trip-tab"
+  >
+    <div style="margin: 5% 0%">
+      <button
+        onclick="add()"
+        style="padding: 2%; background-color: red; color: white"
+      >
+        Add another point
+      </button>
+      <button
+        onclick="remove()"
+        style="padding: 2%; background-color: red; color: white"
+      >
+        Remove last added point
+      </button>
+    </div>
+    <form method="POST">
+      <div id="points" style="display: table; width: 100%; table-layout: fixed">
+        <div id="start-point-container" class="autocomplete-container">
+          <!--<input
+            id="start-point"
+            name="start-point"
+            type="search"
+            style="display: table-cell; width: 100%; padding: 2%"
+            class="form-control rounded location-points"
+            placeholder="Add Starting Point"
+            aria-label="Search"
+            aria-describedby="search-addon"
+          />-->
+        </div>
+        <div id="intermediate"></div>
+        <div id="end-container" class="autocomplete-container">
+          <!--<input
+            id="end-point"
+            name="end-point"
+            type="search"
+            class="form-control rounded location-points"
+            placeholder="Add Destination"
+            aria-label="Search"
+            style="display: table-cell; width: 100%; padding: 2%"
+            aria-describedby="search-addon"
+          />-->
+        </div>
+      </div>
+      <input type="hidden" value="1" id="total_chq" />
+
+      <br />
+      <input
+        id="range-start"
+        name="range-start"
+        type="number"
+        class="form-control rounded"
+        placeholder="Range Start"
+        aria-label="range-start"
+        aria-describedby="range-start-addon"
+      />
+      <br />
+      <input
+        id="range-arrival"
+        name="range-arrival"
+        type="number"
+        class="form-control rounded"
+        placeholder="Range Arrival"
+        aria-label="range-arrival"
+        aria-describedby="range-arrival-addon"
+      />
+      <br />
+
+      <input
+        id="poi-radius"
+        name="poi-radius"
+        type="number"
+        class="form-control rounded"
+        placeholder="POI Radius in Metres"
+        aria-label="poi-radius"
+        aria-describedby="poi-radius-addon"
+      />
+      <br />
+      <input
+        id="range-ev"
+        name="range-ev"
+        type="number"
+        class="form-control rounded"
+        placeholder="Range of EV in km"
+        aria-label="range-ev"
+        aria-describedby="range-ev-addon"
+      />
+      <br />
+      <h6 style="color:whitesmoke;">Trip Start Date</h6>
+      <input
+        id="start-date"
+        name="start-date"
+        type="date"
+        class="form-control rounded"
+        placeholder="Choose Start Date"
+        aria-label="start-date"
+        aria-describedby="start-date-addon"
+      />
+      <br/>
+
+      
+      <h6 style="color:whitesmoke;">Trip Start Time</h6>
+      <input
+        id="start-time"
+        name="start-time"
+        type="time"
+        class="form-control rounded"
+        placeholder="Choose Start Time"
+        aria-label="start-time"
+        aria-describedby="start-time-addon"
+      />
+      <br />
+      <input id="plan-trip-btn" type="submit" value="Find Best Route" />
+    </form>
+  </div>
+  <!-- End of Plan Trip Tab-->
+
+  <div
+    class="tab-pane fade"
+    id="more-options-section"
+    role="tabpanel"
+    aria-labelledby="more-options-section-tab"
+  >
+    Tab 3
+  </div>
+</div>
